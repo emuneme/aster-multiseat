@@ -33,7 +33,7 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="lg:col-span-2 space-y-6">
                         <Link to="/" className="inline-block transition-opacity hover:opacity-80">
-                            <img src="/logo.png" alt="ASTER Logo" className="h-14 w-auto object-contain dark:brightness-110" />
+                            <img src="/logo.webp" alt="ASTER Logo" className="h-14 w-auto object-contain dark:brightness-110" />
                         </Link>
                         <p className="text-slate-500 dark:text-slate-400 text-base leading-relaxed max-w-sm">
                             Redefinindo a infraestrutura digital moçambicana com soluções inovadoras e tecnologia sustentável.

@@ -130,7 +130,7 @@ const Cart = () => {
                         {items.map((item) => (
                             <div key={item.id} className="group bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col sm:flex-row items-center gap-6 transition-all hover:shadow-xl hover:border-blue-200 dark:hover:border-blue-900/50">
                                 <div className="w-24 h-24 bg-gray-50 dark:bg-gray-700/50 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
-                                    <img src="/logo.png" alt="Product" className="w-14 h-14 object-contain opacity-90 grayscale group-hover:grayscale-0 transition-all duration-300" />
+                                    <img src="/logo.webp" alt="Product" className="w-14 h-14 object-contain opacity-90 grayscale group-hover:grayscale-0 transition-all duration-300" />
                                 </div>
 
                                 <div className="flex-grow text-center sm:text-left">

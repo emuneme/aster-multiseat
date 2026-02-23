@@ -201,7 +201,7 @@ const Settings = () => {
                                     value={formData.invoiceLogo || ''}
                                     onChange={handleChange}
                                     className="input input-bordered"
-                                    placeholder="/logo.png"
+                                    placeholder="/logo.webp"
                                 />
                             </div>
                             <div className="form-control">
