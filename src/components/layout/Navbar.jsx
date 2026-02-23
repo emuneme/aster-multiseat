@@ -37,7 +37,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to="/" className="btn btn-ghost hover:bg-transparent px-2">
-                        <img src="/src/assets/logo.png" alt="ASTER" className="h-16 w-auto object-contain transition-transform hover:scale-105 duration-300" />
+                        <img src="/logo.png" alt="ASTER" className="h-16 w-auto object-contain transition-transform hover:scale-105 duration-300" />
                     </Link>
                 </div>
 
