@@ -1,0 +1,120 @@
+﻿
+> aster-multiseat@0.0.0 lint
+> eslint .
+
+
+D:\Antigravity\Aster-2.5\src\components\PurchaseAuthModal.tsx
+  25:25  error    Unexpected any. Specify a different type                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  42:6   warning  React Hook useEffect has a missing dependency: 'onAuthSuccess'. Either include it or remove the dependency array. If 'onAuthSuccess' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  52:71  error    Unexpected any. Specify a different type                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  53:12  error    '_' is defined but never used                                                                                                                                                                                                              @typescript-eslint/no-unused-vars
+
+D:\Antigravity\Aster-2.5\src\components\PushNotificationListener.tsx
+  30:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  30:80  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  42:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  54:30  error  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  54:33  error  Empty block statement                     no-empty
+
+D:\Antigravity\Aster-2.5\src\pages\admin\Team.tsx
+  41:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\pages\admin\Tickets.tsx
+   25:8    warning  React Hook React.useEffect has missing dependencies: 'fetchTechnicians' and 'technicians.length'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/exhaustive-deps
+   38:17   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Antigravity\Aster-2.5\src\pages\admin\Tickets.tsx:38:17
+  36 |             const ticketToOpen = tickets.find(t => t.id === location.state.openTicketId);
+  37 |             if (ticketToOpen) {
+> 38 |                 setSelectedTicket(ticketToOpen);
+     |                 ^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  39 |                 // Clear state so it doesn't re-open on refresh
+  40 |                 window.history.replaceState({}, document.title);
+  41 |             }                                                                                                                                                                                                                                                                                                                                                          react-hooks/set-state-in-effect
+  229:38   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+D:\Antigravity\Aster-2.5\src\pages\admin\Tickets.tsx:229:38
+  227 |                                 <div className="flex flex-wrap items-center gap-2 mb-1">
+  228 |                                     <h3 className="text-xl font-bold truncate">{selectedTicket.friendly_id}</h3>
+> 229 |                                     <StatusBadge status={selectedTicket.status} />
+      |                                      ^^^^^^^^^^^ This component is created during render
+  230 |                                 </div>
+  231 |                                 <p className="text-sm font-medium text-gray-500 uppercase truncate">{selectedTicket.category}</p>
+  232 |                             </div>
+
+D:\Antigravity\Aster-2.5\src\pages\admin\Tickets.tsx:84:25
+   82 |     };
+   83 |
+>  84 |     const StatusBadge = ({ status }: { status: Ticket['status'] }) => {
+      |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  85 |         const styles = {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^
+>  86 |             'Novo': 'bg-blue-100 text-blue-700 border-blue-200',
+      ÔÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^
+>  97 |         );
+      | ^^^^^^^^^^^^^^^^^^^^^^^^
+>  98 |     };
+      | ^^^^^^ The component is created during render here
+   99 |
+  100 |     const PriorityBadge = ({ priority }: { priority: Ticket['priority'] }) => {
+  101 |         const styles = {  react-hooks/static-components
+  274:114  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+  330:74   error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+  414:123  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+  424:123  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\pages\public\portal\NewTicketPortal.tsx
+  128:99  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\pages\public\portal\PortalDashboard.tsx
+  135:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  173:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  193:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\store\contractStore.ts
+  18:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  31:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  77:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  78:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\store\customerAuthStore.ts
+  15:68  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\store\customerStore.ts
+  15:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\store\orderStore.ts
+   10:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   17:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   24:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   59:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  138:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\store\productStore.ts
+  16:20  error  Unexpected any. Specify a different type   @typescript-eslint/no-explicit-any
+  50:17  error  'desc' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  50:62  error  Unexpected any. Specify a different type   @typescript-eslint/no-explicit-any
+  74:17  error  'desc' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  74:62  error  Unexpected any. Specify a different type   @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\store\quoteStore.ts
+   9:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  14:15  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Antigravity\Aster-2.5\src\store\ticketStore.ts
+  61:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  93:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  94:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Ô£û 43 problems (41 errors, 2 warnings)
+
