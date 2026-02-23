@@ -58,7 +58,7 @@ const Login = () => {
                 {/* Right Side - Form */}
                 <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                     <div className="text-center mb-10">
-                        <img src="/src/assets/logo.png" alt="ASTER" className="h-16 mx-auto object-contain mb-6" />
+                        <img src="/logo.png" alt="ASTER" className="h-16 mx-auto object-contain mb-6" />
                         <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Admin Login</h3>
                         <p className="text-gray-500 text-sm mt-2">Entre com suas credenciais para continuar</p>
                     </div>

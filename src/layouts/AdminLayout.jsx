@@ -151,7 +151,7 @@ const AdminLayout = () => {
             {/* Sidebar */}
             <aside className="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 hidden lg:flex flex-col fixed h-full z-20">
                 <div className="p-6 flex items-center justify-center border-b border-gray-100 dark:border-gray-700">
-                    <img src="/src/assets/logo.png" alt="Admin" className="h-10 w-auto object-contain" />
+                    <img src="/logo.png" alt="Admin" className="h-10 w-auto object-contain" />
                 </div>
 
                 <nav className="flex-1 overflow-y-auto py-6 px-3">

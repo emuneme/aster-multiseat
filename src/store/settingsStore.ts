@@ -34,7 +34,7 @@ export const useSettingsStore = create<SettingsState>()(
                 currency: 'MZN',
                 currencyRate: 1.0,
                 enableNotifications: true,
-                invoiceLogo: '/src/assets/logo.png',
+                invoiceLogo: '/logo.png',
                 invoiceAddress: 'Av. 24 de Julho, Maputo, Moçambique',
                 invoiceFooter: 'Obrigado pela preferência.',
                 bankAccountBIM: '172176553',

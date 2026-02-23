@@ -41,7 +41,7 @@ const ContractView = () => {
                 {/* Header elements matching Aster Branding */}
                 <div className="flex justify-between items-start mb-12 border-b-2 border-amber-500 pb-6">
                     <div>
-                        <img src="/src/assets/logo.png" alt="ASTER" className="h-14 mb-4" />
+                        <img src="/logo.png" alt="ASTER" className="h-14 mb-4" />
                         <h1 className="text-2xl font-black text-gray-900 uppercase tracking-widest leading-none">
                             CONTRATO DE PRESTAÇÃO DE SERVIÇOS
                         </h1>

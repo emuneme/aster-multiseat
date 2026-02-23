@@ -201,7 +201,7 @@ const Settings = () => {
                                     value={formData.invoiceLogo || ''}
                                     onChange={handleChange}
                                     className="input input-bordered"
-                                    placeholder="/src/assets/logo.png"
+                                    placeholder="/logo.png"
                                 />
                             </div>
                             <div className="form-control">

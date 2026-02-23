@@ -69,7 +69,7 @@ const PortalLogin = () => {
                 {/* Right Side - Form */}
                 <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                     <div className="text-center mb-10">
-                        <img src="/src/assets/logo.png" alt="ASTER" className="h-16 mx-auto object-contain mb-6" />
+                        <img src="/logo.png" alt="ASTER" className="h-16 mx-auto object-contain mb-6" />
                         <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Portal do Cliente</h3>
                         <p className="text-gray-500 text-sm mt-2">Valide as suas credenciais para continuar</p>
                     </div>
