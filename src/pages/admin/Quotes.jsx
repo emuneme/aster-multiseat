@@ -367,7 +367,7 @@ const Quotes = () => {
 
             {/* Create Quote Modal */}
             {isCreateModalOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 backdrop-blur-sm p-4 pt-10 md:pt-16 pb-10">
                     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col animate-in fade-in zoom-in duration-200 overflow-hidden">
                         <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center shrink-0 bg-gray-50 dark:bg-gray-800">
                             <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Nova Cotação (Proforma)</h3>

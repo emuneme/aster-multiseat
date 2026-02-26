@@ -60,8 +60,8 @@ const Orders = () => {
         e.preventDefault();
 
         const customer = customers.find(c => c.email === newOrderData.customerEmail) || {
-            name: newOrderData.customerName || "Cliente nao Registado",
-            email: newOrderData.customerName ? "manual@aster.co.mz" : "nao_registado@aster.co.mz"
+            name: newOrderData.customerName || "Cliente Balcão",
+            email: newOrderData.customerName ? "manual@aster.co.mz" : "balcao@aster.co.mz"
         };
 
         addOrder({
@@ -335,8 +335,11 @@ const Orders = () => {
                         {/* Header Fixed at top of modal content relative */}
                         <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center sticky top-0 bg-white dark:bg-gray-800 z-10">
                             <div>
-                                <h3 className="text-xl font-bold text-gray-800 dark:text-white">Pedido #{selectedOrder.id}</h3>
-                                <p className="text-sm text-gray-500">{new Date(selectedOrder.date).toLocaleString()}</p>
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-1">Pedido #{selectedOrder.id}</h3>
+                                <div className="flex items-center gap-2">
+                                    <StatusBadge status={selectedOrder.status} />
+                                    <span className="text-sm text-gray-500">• {new Date(selectedOrder.date).toLocaleString()}</span>
+                                </div>
                             </div>
                             <button onClick={() => setSelectedOrder(null)} className="btn btn-circle btn-sm bg-gray-100 hover:bg-gray-200 border-none text-gray-600">
                                 <X className="w-5 h-5" />
@@ -435,7 +438,7 @@ const Orders = () => {
 
             {/* Create Manual Order Modal */}
             {isCreateModalOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 backdrop-blur-sm p-4 pt-10 md:pt-16 pb-10">
                     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col animate-in fade-in zoom-in duration-200 overflow-hidden">
                         <div className="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center shrink-0 bg-gray-50 dark:bg-gray-800">
                             <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Novo Pedido Manual</h3>
