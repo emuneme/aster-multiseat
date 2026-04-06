@@ -355,6 +355,14 @@ const Home = () => {
                                 className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 mix-blend-multiply dark:mix-blend-normal"
                             />
                         </div>
+                        {/* Client 4 - Compliance Solutions Lda */}
+                        <div className="group transition-transform hover:scale-110">
+                            <img
+                                src="/assets/clients/compliance.png"
+                                alt="Compliance Solutions Lda"
+                                className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 mix-blend-multiply dark:mix-blend-normal"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
