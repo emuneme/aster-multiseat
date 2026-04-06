@@ -152,9 +152,13 @@ const Contracts = () => {
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-100">
-                                {contracts
+                                {contracts && contracts.length > 0 ? (
+                                    <>
+                                    {contracts
                                     .filter(c => {
-                                        const matchSearch = !searchQuery.trim() || c.customer?.name.toLowerCase().includes(searchQuery.toLowerCase());
+                                        if (!c) return false;
+                                        const customerName = c?.customer?.name || '';
+                                        const matchSearch = !searchQuery.trim() || customerName.toLowerCase().includes(searchQuery.toLowerCase());
                                         const matchStatus = statusFilter === 'all' || c.status === statusFilter;
                                         return matchSearch && matchStatus;
                                     })
@@ -196,6 +200,14 @@ const Contracts = () => {
                                             </td>
                                         </tr>
                                     ))}
+                                    </>
+                                ) : (
+                                    <tr>
+                                        <td colSpan={6} className="text-center py-8 text-gray-500">
+                                            Carregando contratos...
+                                        </td>
+                                    </tr>
+                                )}
                             </tbody>
                         </table>
                     </div>
