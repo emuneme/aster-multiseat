@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import { FileText, Plus, Search, Eye, CheckCircle, Clock, XCircle, Printer, Calendar } from 'lucide-react';
 
 const Contracts = () => {
-    const { contracts, fetchContracts, addContract, updateContractStatus } = useContractStore();
+    const { contracts, fetchContracts, addContract } = useContractStore();
+    const updateContractStatus = useContractStore(state => state.updateContractStatus);
     const { quotes, fetchQuotes } = useQuoteStore();
     const { user } = useAuthStore();
 
@@ -176,7 +177,10 @@ const Contracts = () => {
                                                 <select
                                                     className="select select-bordered select-sm text-xs font-bold rounded-full w-full max-w-[130px]"
                                                     value={contract.status}
-                                                    onChange={(e) => updateContractStatus(contract.id, e.target.value)}
+                                                    onChange={(e) => {
+                                                        const newStatus = e.target.value;
+                                                        updateContractStatus(contract.id, newStatus).catch(err => console.error(err));
+                                                    }}
                                                 >
                                                     {statuses.map(s => <option key={s} value={s}>{s}</option>)}
                                                 </select>
